@@ -1,0 +1,33 @@
+.zoeken {
+
+	.search-form {
+		@extends .doos;
+		background-color: $rustig_rood;
+		padding: 20px;
+		color: white;
+		display: inline-block;
+		.search-field {
+			border: 0;
+			padding: 4px;
+			border-radius: 0;
+		}
+		@media (max-width: 500px) {
+			display: block;
+			label {
+				margin-bottom: 10px;
+				display: block;
+				input, span {
+					display: block;
+				}
+				span {
+					margin-bottom: 4px;
+				}
+			}
+		}
+	}
+
+	.search-submit {
+		@extend .knop;
+		height: 2em;
+	}
+}

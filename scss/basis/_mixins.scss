@@ -1,0 +1,126 @@
+//onderstaande mixin is lekker handig, deze 3 attributen heb je altijd nodig bij een before of after pseudoclass, dit scheelt typen*/
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+/*voorbeeld in code bovenstaande mixin
+
+div::after {
+    @include pseudo;
+    top: -1em; left: -1em;
+    width: 1em; height: 1em;
+}
+*/
+
+//onderstaande mixin kan worden gebruikt voor een element om bij responsive zn juiste ratio te houden
+
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    } @else {
+        padding-top: $padding;
+    }
+}
+
+/* voorbeeld in code bovenstaande mixin
+
+div {
+    @include responsive-ratio(16,9);
+}
+
+*/
+
+
+
+
+
+//onderstaande mixin is handig voor gebruik van placeholders in inputs, zo hoef je maar een keer te stijlen
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+/*voorbeeld van gebruik:
+
+input,
+textarea {
+    @include input-placeholder {
+        color: $grey;
+    }
+}
+*/
+
+
+
+//onderstaande mixin is goed voor transitions
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+/*voorbeeld in gebruik:
+
+a {
+  color: gray;
+  @include transition(color .3s ease);
+  &:hover {
+    color: black;
+  }
+}
+
+*/
+
+
+
+
+//box sizing
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+/*gebruik
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+*/
+
+
+//border radius:
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+
+/*gebruik:
+.button {
+  @include border-radius(5px);
+}
+
+
+*/

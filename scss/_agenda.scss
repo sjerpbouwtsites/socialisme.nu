@@ -1,0 +1,251 @@
+#agenda-filter {
+	padding: 20px;
+	background-color: $rustig_rood;
+	color: white;
+	& > .flex {
+		//justify-content: space-between;
+		align-items: flex-end;
+		@media (max-width: 700px) {
+			flex-wrap: wrap;
+			margin-bottom: -20px;
+			align-items: flex-start;
+			justify-content: start;
+			& > * {
+				margin-bottom: 20px;
+			}
+		}
+		@media (max-width: 560px) {
+			& > *:last-child {
+				margin-top: 32px;
+			}
+		}
+		@media (max-width: 440px) {
+			& > * {
+				flex-basis: 100%;
+				margin-right: 0;
+				margin-bottom: 30px;
+				&:last-child {
+					margin-top: 0;
+				}
+			}
+		}
+
+	}
+		section {
+			margin-right: 40px;
+			h3 {
+				margin-bottom: 10px;
+			}
+			flex-direction: column;
+
+		}
+
+		select {
+			-webkit-appearance: none;
+			appearance: none;
+			-moz-appearance: none;
+			background-image: url("afb/chevron-down.png");
+			background-position: 97% center;
+			background-repeat: no-repeat;
+			background-size: 20px 20px;
+			height: 34px;
+			padding-top: 0;
+			padding-right: 20px;
+			padding-left: 6px;
+			transition: color 0.2s ease-in-out;
+			border-radius: 1px;
+			border: 0;
+			font-size: 12px;
+			background-color: #fff;
+			font-family: "Asap", sans-serif;
+			font-weight: bold;
+			color: $grijs;
+			&.geklikt, &:hover {
+				color: $donkergrijs;
+			}
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		[type='submit'] {
+			@extend .knop;
+			font-family: 'Merriweather', serif;
+			font-size: 1em;
+			border: 0;
+			border-radius: 0;
+			height: calc(2em + 2px);
+		}
+}
+
+.agenda {
+	ul, li {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	span, h2, a span {
+		color: $grijs;
+	}
+	ul {
+		font-size: .8em;
+	}
+	li {
+		border-bottom: $dunlijntje;
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+	span {
+		line-height: 1em;
+	}
+	li > a.flex {
+		padding: 15px 10px;
+		position: relative;
+		span {
+			transition: 0.4s color ease;
+		}
+		.agenda-links span {
+			transition: 0.5s color ease-in-out 0.5s;
+			color: $zwart;
+			font-weight: bold;
+			font-family: "Asap";
+			&.met-streepje {
+				display: block;
+				padding-top: 5px;
+				margin-top: 5px;
+				position: relative;
+				&::after {
+					position: absolute;
+					left: 0;
+					top: -0.5px;
+					content: '';
+					display: block;
+					width: 30px;
+					border-top: $dunlijntje;
+				}
+			}
+		}
+		.agenda-rechts {
+			padding-left: 10px;
+			flex-basis: 580px;
+		}
+		&:after {
+			display: block;
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0px;
+			width: 0%;
+			transition: 0.6s width ease-in 0.1s;
+			z-index: -1;
+			height: calc(100% + 0.5px);
+			background-color: $rustig_rood;
+		}
+		@media (min-width: 600px) {
+			&:hover {
+				text-decoration: none;
+				span {
+					color: $zwart;
+				}
+				.agenda-links span {
+					color: white;
+				}
+
+				&::after {
+					width: 60px;
+					transition: 0.5s width ease-in-out 0.4s;
+				}
+			}
+		}
+
+		@media (max-width: 600px) {
+			flex-wrap: wrap;
+			.agenda-rechts {
+				flex-basis: 100%;
+				margin-top: 10px;
+				padding-left: 0;
+			}
+		}
+	}
+	.flex {
+		flex-direction: row;
+		span {
+			display: block;
+		}
+		.agenda-links {
+			flex-basis: 60px;
+			flex-shrink: 0;
+		}
+		.agenda-midden.flex {
+			flex-direction: column;
+			flex-basis: 170px;
+			justify-content: flex-start;
+			flex-shrink: 0;
+			@media (max-width: 600px) {
+				flex-basis: auto;
+				width: calc(100% - 60px);
+			}
+		}
+			.locatie {
+				font-size: .6em;
+				line-height: .8rem;
+				@media (max-width: 600px) {
+					margin-top: 0;
+				}
+				@media (max-width: 440px) {
+					margin-bottom: 5px;
+				}
+			}
+			.titel {
+				color: $zwart;
+				font-size: 1em;
+			}
+	}
+	time {
+		display: none;
+	}
+	.knoppen-doos {
+		margin-top: 20px;
+	}
+}
+
+.agenda-los .agenda-data {
+	padding: 20px;
+	background-color: $rustig_rood;
+	display: inline-flex;
+	flex-direction: column;
+	margin-right: 20px;
+	span, h1 {
+		display: block;
+		font-family: "Merriweather";
+		font-weight: 600;
+		color: white;
+	}
+	span {
+		font-size: 1.2em;
+	}
+}
+
+.agenda-los .niet-volle-breedte {
+	display: flex;
+	flex-direction: column;
+	.single-footer {
+		order: 3;
+	}
+	#agenda-kaart {
+		order: 4;
+	}
+	.jp-relatedposts {
+		order: 5;
+	}
+	.terug-naar-agenda {
+		order: 6;
+	}
+
+}
+
+#agenda-kaart {
+	height: 350px;
+	margin-top: 20px;
+}

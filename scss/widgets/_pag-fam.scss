@@ -1,0 +1,15 @@
+ .romp aside .pag-fam article{
+	&.huidige a, a:hover {
+		h3 {
+			color: $rustig_rood;
+		}
+	}
+	&:first-child {
+		h3 {
+			font-weight: bold;
+		}
+		& ~ article h3 {
+			text-indent: 10px;
+		}
+	}
+}

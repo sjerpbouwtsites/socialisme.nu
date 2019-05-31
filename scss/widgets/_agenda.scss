@@ -1,0 +1,50 @@
+aside .agenda {
+	background-color: $rustig_rood;
+	padding: 20px;
+	span, h2, a span {
+		color: white;
+	}
+	li {
+		border-bottom: 1px solid white;
+		font-family: "Asap", sans-serif;
+		& > a.flex {
+			justify-content: flex-start;
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.1);
+				&::after {
+					display: none;
+				}
+			}
+			&:hover .agenda-links span,
+			.agenda-links span,
+			span,
+			&:hover span {
+				color: white;
+			}
+			.agenda-links {
+				flex-basis: 50px
+			}
+		 }
+	}
+	li > a.flex {
+		padding: 10px;
+		width: calc(100% + 20px);
+		margin-left: -10px;
+	}
+	.flex {
+		.titel {
+			color: white;
+			font-size: 1em;
+			font-weight: 600;
+		}
+		.locatie {
+			font-size: .75em;
+			@media (max-width: 440px) {
+				margin: 0;
+			}
+		}
+		.agenda-midden.flex {
+			min-width: auto;
+		}
+	}
+}

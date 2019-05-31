@@ -1,0 +1,18 @@
+.wpcf7-form {
+	p > label {
+		margin-bottom: 10px;
+		display: block;
+		 + br {
+		 	display: none;
+		 }
+	}
+/* 	p:last-of-type { //verzenden
+		text-align: right;
+	} */
+}
+
+#conv-nieuwsbrief .wpcf7-form-control.wpcf7-submit {
+	background-color: $rustig_rood;
+	color: white !important;
+}
+

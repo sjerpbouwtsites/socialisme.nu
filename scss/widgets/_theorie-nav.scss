@@ -1,0 +1,135 @@
+.theorie-nav.widget {
+
+	.blok {
+		//padding: 10px;
+		background-color: $rustig_rood;
+		color:white;
+		font-size: .7em;
+		font-family: "Asap";
+	}
+		ol, ul, li, a {
+			color:white
+		}
+
+		ol, ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style-type: none;
+			li ~ li {
+				margin-left: 10px;
+				font-size: .9em;
+			}
+		}
+
+			li {
+				line-height: 1.1;
+			}
+
+	@media (min-width: 901px) {
+		.geen-titel {
+			display: none;
+		}
+
+
+		li {
+			list-style-type: none;
+			font-size: 13.5px;
+			li a {
+
+				font-weight: 400;
+
+			}
+		}
+
+ 		li a {
+			transition:  0.2s ease-in-out 0.2s;
+			font-weight: 500;
+			letter-spacing: 0.2px;
+			display: block;
+			padding: 10px;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		.li-li ~ li {
+			margin-left: 0;
+		}
+		.li-li ~ li a {
+			padding: 7.5px 7.5px 7.5px 17.5px;
+		}
+		&.maagdelijk .eerste:not(.li-li) > a,
+		 li:hover > a,
+		 a.huidige {
+//			color: $bruin;
+			transition:  ease-in-out 0.2s;
+			background-color: rgba(255, 255, 255, 0.13);
+
+			a {
+//				color: white;
+			}
+		}
+		&.maagdelijk .eerste:not(.li-li) > a,
+		a.huidige {
+			border-left: 5px solid #6c0d0d;
+		}
+
+	}
+	@media (max-width: 900px) {
+		position: fixed !important;
+		top: auto !important;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		z-index: 5;
+		margin-bottom: 0;
+		header {
+			display: none;
+		}
+		nav.blok {
+			overflow: hidden;
+			border-left: 10px solid $rustig_rood;
+			border-right: 10px solid $rustig_rood;
+			position: relative;
+		}
+			.geen-titel {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				background-color: $rustig_rood;
+				padding: 0px 10px;
+				display: block;
+				z-index: 2;
+				&:last-child {
+					left: auto;
+					right: 0;
+				}
+			}
+
+		ol {
+			width: 500vw;
+			position: relative;
+			transition: ease-in-out 0.25s;
+			padding-left: 10px;
+			left: 25px;
+			li, ul {
+				margin-bottom: 0;
+				display: inline;
+				margin-right: 10px;
+			}
+		}
+		ol, li, ul, a {
+			line-height:3;
+		}
+		&.maagdelijk {
+			ol > li:first-child {
+				font-weight: bold;
+			}
+		}
+		.huidige {
+			font-weight: bold;
+		}
+	}
+}

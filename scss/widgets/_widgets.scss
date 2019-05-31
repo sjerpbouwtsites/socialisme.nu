@@ -1,0 +1,17 @@
+.widget {
+	&.met-ruimte .blok{
+		padding: 20px;
+	}
+	.textwidget {
+		padding: 20px;
+		@extend .blok;
+	}
+
+	.in-lijst .art-rechts {
+		margin-left: auto;
+		margin-right: auto;
+		padding: 15px;
+		text-align: center;
+
+	}
+}

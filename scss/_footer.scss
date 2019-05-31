@@ -1,0 +1,125 @@
+#stek-voet {
+	margin-top: 40px;
+	color: $donkergrijs;
+	font-size: .8em;
+	.blok > .flex {
+		//border-top: 5px solid $rustig_rood;
+		padding: 0 20px 0 20px;
+		background-color: white;
+		flex-wrap: wrap;
+
+	}
+	section {
+		flex-basis: calc(33% - 40px);
+		position: relative;
+		padding-bottom: 20px;
+		&::after {
+			display: block;
+			content: '';
+			position: absolute;
+			top: 20px;
+			right: -30px;
+			height: calc(100% - 60px);
+			border-right: $dunlijntje;
+
+		}
+		&:last-child {
+			&::after {
+				display: none;
+			}
+		}
+
+		&:first-child {
+			@media (max-width: 900px) {
+				flex-basis: 100%;
+				padding-bottom: 40px;
+				&::after {
+					bottom: 10px;
+					right: 20px;
+					width: calc(100% - 40px);
+					height: 0;
+					border-right: 0;
+					border-bottom: $dunlijntje;
+					top: auto
+				}
+				footer {
+					display: inline-block;
+					margin-top: 0;
+				}
+				& ~ section {
+					flex-basis: calc(50% - 40px);
+					@media (max-width: 500px) {
+						flex-basis: 100%;
+						padding-bottom: 0;
+						& ~ section {
+							padding-bottom: 40px;
+						}
+						&::after {
+							bottom: 10px;
+							right: 20px;
+							width: calc(100% - 40px);
+							border-right: 0;
+							border-bottom: $dunlijntje;
+							top: auto;
+							height: 0;
+						}
+ 						& + section {
+							padding-bottom: 20px;
+							&::after {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+		.wpcf7 input {
+			max-width: 180px;
+		}
+	}
+
+
+	.sectie-wit {
+		margin-top: 20px;
+
+	}
+
+	.sectie-rood {
+		background-color: $rustig_rood;
+		color: white;
+		padding: 20px;
+	}
+
+	.stek-nav .hieronder-lijn::after {
+	    margin: 9px 0 10px;
+	}
+
+	.menu-stuk {
+		a {
+			color: inherit;
+			&:hover {
+				color: $rustig_rood;
+				text-decoration: none;
+			}
+
+		}
+	}
+
+}
+	.colofon {
+		padding: 0 20px 20px ;
+		text-align: center;
+		opacity: 0.9;
+		span {
+			line-height: 1.2;
+			//max-width: 500px;
+			font-size: 1em;
+			width: 420px;
+			max-width: calc(100% - 40px);
+			display: inline-block;
+		}
+	}
+
+[data-contrast='1'] #stek-voet {
+	color: $zwart;
+}

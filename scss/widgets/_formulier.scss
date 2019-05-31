@@ -1,0 +1,177 @@
+.widget.formulier.in-pagina {
+	padding: 0;
+	margin-top: 30px;
+	h2 {
+		@extend .streep-eronder;
+	}
+	#abo-form, #lid-form {
+		@extend .flex;
+		flex-wrap: wrap;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		margin-bottom: -20px;
+
+		& > * {
+			flex-basis: calc(33% - 10px);
+			margin-bottom: 20px;
+		}
+		@media (max-width: 900px) and (min-width: 600px) {
+			display: flex;
+			flex-wrap: wrap;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			margin-bottom: -20px;
+			& > * {
+				flex-basis: calc(50% - 10px);
+				margin-bottom: 20px;
+			}
+		}
+ 		@media (max-width: 600px) {
+			& > * {
+				flex-basis: 100%;
+				margin-bottom: 20px;
+			}
+			.abo-eind {
+				margin-bottom: 20px;
+			}
+		}
+		.form-afsluiting{
+			margin-bottom: 20px;
+		}
+		fieldset {
+			margin: 0 0 20px 0;
+			[type='text'],
+			[type='email'],
+			[type='tel'] {
+				width: 100%;
+			}
+		}
+		.form-intro {
+			font-size: 1rem;
+		}
+		.form-afsluiting {
+			font-size: .8rem;
+		}
+	}
+ 	#lid-form {
+		@media (min-width: 901px) {
+			& > fieldset:last-of-type {
+				flex-basis: calc(50% - 10px);
+				& ~ * {
+					flex-basis: calc(50% - 10px);
+				}
+			}
+		}
+	}
+}
+
+.formulier.widget {
+	.wpcf7 {
+		padding: 20px;
+		@extend .blok;
+	}
+		br {
+			display: none;
+		}
+	#abo-form {
+		& > * {
+		margin-bottom: 20px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		@media (max-width: 900px) and (min-width: 600px) {
+			display: flex;
+			flex-wrap: wrap;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			margin-bottom: -20px;
+			& > * {
+				flex-basis: calc(50% - 10px);
+				margin-bottom: 20px;
+			}
+		}
+ 		@media (max-width: 600px) {
+			& > * {
+				flex-basis: 100%;
+				margin-bottom: 20px;
+			}
+		}
+
+	}
+		.form-afsluiting, .form-intro {
+			font-size: .7rem;
+			display: block;
+			font-family: "Merriweather", serif;
+		}
+		fieldset {
+			border: $dunlijntje;
+			padding: 45px 10px 10px 10px;
+			font-family: "Asap", sans-serif;
+			font-size: .8rem;
+			margin-bottom: 20px;
+			//background-color: $heel_erg_palet;
+		}
+			legend {
+				margin-bottom: -35px;
+				font-weight: bold;
+				font-size: 1.2rem;
+			}
+			label {
+				display: block;
+				margin-bottom: 5px;
+				//font-size: .8em;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+				[type='radio'], [type='checkbox'] {
+					//position: relative;
+					//bottom: -2px;
+				}
+
+				[type='text'],
+				[type='tel'],
+				[type='email'] {
+					display: block;
+					//font-size: .8em;
+				}
+
+				input {
+					max-width: 160px;
+					@include input-placeholder {
+						//font-size: .8em
+					}
+				}
+
+				.wpcf7-radio .wpcf7-list-item, .wpcf7-checkbox .wpcf7-list-item {
+					label {
+						* {
+							vertical-align: middle;
+							line-height: 15px;
+						}
+						span {
+							margin-right: 5px;
+						}
+						input {
+							/* position: relative;
+							top: -2px; */
+						}
+					}
+				}
+
+/* 		span {
+			font-size: .6em;
+			display: block;
+			font-family: "Asap", sans-serif;
+			margin-bottom: 5px;
+		} */
+		.form-afsluiting {
+			margin-bottom: 20px;
+		}
+		[type='submit'] {
+			background-color: #d73636;
+			box-shadow: 2px 4px 0 rgba(60, 0, 0, 0.11);
+			color: white !important;
+		}
+}

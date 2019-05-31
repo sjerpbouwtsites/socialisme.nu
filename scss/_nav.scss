@@ -1,0 +1,56 @@
+.stek-nav {
+	background-color: white;
+	top: 100%;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	.verpakking {
+		flex-direction: column;
+	}
+	ul, li, p {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+		a {
+			text-decoration: none;
+			font-weight: 500;
+		}
+	}
+	ul {
+		padding: 0;
+	}
+	p {
+		text-align: right;
+		&:last-child {
+			padding-bottom: 20px;
+		}
+	}
+	.lijn {
+		margin: 9px calc(100% - 150px) 10px;
+		border-top: $dunlijntje;
+		width: 150px;
+	}
+	a {
+		display: block;
+		color: $donkergrijs;
+		&:hover {
+			color: $rustig_rood;
+		}
+	}
+	li:hover a, .current-menu-item a{
+		color: $rustig_rood;
+	}
+	&:hover {
+		.current-menu-item a{
+			color: $donkergrijs
+		}
+		.current-menu-item:hover a {
+			color: $rustig_rood
+		}
+	}
+
+
+}
+	.stek-nav a, .stek-nav:hover .current-menu-item a {
+		color: $zwart;
+	}

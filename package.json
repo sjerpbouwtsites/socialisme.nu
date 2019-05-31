@@ -1,0 +1,20 @@
+{
+  "name": "socnu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/a.js",
+  "scripts": {
+    "watch": "npm run dev",
+    "dev": "cross-env NODE_ENV=development node js/a.js",
+    "build": "cross-env NODE_ENV=production node js/a.js"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "node-sass": "^4.9.3",
+    "parcel-bundler": "^1.10.1"
+  }
+}

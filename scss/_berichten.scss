@@ -1,0 +1,661 @@
+article p:last-of-type {
+	margin-bottom: 0;
+}
+
+.art-link {
+	color: $zwart;
+	text-decoration: none;
+	h1, h2 {
+		color: $zwart;
+	}
+	p, span {
+		color: $donkergrijs;
+	}
+}
+[data-contrast='1'] {
+	.art-link {
+		p, span {
+			color: $zwart;
+		}
+	}
+}
+
+a.lees-meer,
+span.lees-meer {
+	color: $rustig_rood;
+	text-decoration: underline;
+}
+
+.romp {
+
+	> .flex {
+		@media (max-width: 900px) {
+			display:block;
+		}
+	}
+
+	.uitgelichte-afbeelding-buiten {
+		position: relative;
+	}
+		.wp-post-image {
+			display: block;
+			& + span {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				background-color: rgba(255, 255, 255, 0.8);
+				padding: 5px;
+				text-align: right;
+				min-width: 80px;
+				font-size: .6em;
+				&.donker {
+					background-color: rgba(0, 0, 0, 0.8);
+					transition: 0.2s ease;
+					color: white;
+				}
+			}
+		}
+
+
+
+
+	.eerste-bericht {
+		//width: 870px;
+		margin-bottom: 40px;
+		@media (max-width: 900px) {
+			margin-left: -20px;
+			margin-right: -20px;
+		}
+		.wp-post-image {
+			margin-bottom: 10px;
+		}
+		h2 {
+			margin: 0;
+			color: $rustig_rood;
+			@media (max-width: 900px) {
+				margin-bottom: 0;
+			}
+		}
+		h2 + p{
+			margin-top: 0;
+		}
+		h2, p {
+			max-width: 870px;
+			@media (max-width: 900px) {
+				margin-left: 20px;
+				margin-right: 20px;
+			}
+		}
+		a:hover {
+			text-decoration: none;
+		}
+	}
+
+
+	main {
+		width: 75%;
+	}
+	aside {
+		width: calc(25% - 20px);
+		margin-left: 20px;
+		margin-top: 30px;
+		section ~ section {
+			margin-top: 40px;
+		}
+		margin-bottom: -1.5em;
+	}
+	@media (max-width: 900px) {
+		main, aside {
+			width: 100%;
+			margin: 0;
+		}
+		aside {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin-top: 40px;
+			margin-bottom: -1.5em;
+			section {
+				flex-basis: calc(50% - 10px);
+				& ~ section {
+					margin-top: 0;
+				}
+				@media (max-width: 500px) {
+					flex-basis: 100%;
+				}
+			}
+			&.sectietal-oneven {
+				section:last-child {
+					flex-basis: 100%;
+				}
+			}
+		}
+	}
+
+}
+
+.werk-canvas {
+	position: absolute;
+	right: 200vw;
+	top: 0;
+}
+
+/* .voorpagina {
+	@media (max-width: 900px) {
+		margin-top: 40px;
+	}
+} */
+
+.voorpagina .eerste-bericht {
+	h2 {
+		font-size: 1.8em;
+		line-height: 1.2;
+		@media (min-width: 900px) {
+			margin-bottom: 10px;
+		}
+	}
+
+	@media (max-width: 600px) {
+		h2 {
+			font-size: 1.5em;
+		}
+		p {
+			font-size: .9rem;
+		}
+	}
+}
+		article.in-lijst {
+			margin-bottom: 20px;
+			position: relative;
+			&:last-child {
+				//margin-bottom: 0;
+				//@media (max-width: 900px) {
+					margin-bottom: 20px;
+				//}
+			}
+			@media (max-width: 600px) {
+				flex-wrap: wrap;
+			}
+
+			.art-links {
+				a {
+					//display: block;
+				}
+				img {
+					height: 100%;
+					object-fit: cover;
+					display: block;
+				}
+			}
+
+			a {
+				color: $zwart;
+				text-decoration: none;
+			}
+
+			.art-rechts {
+				box-sizing:border-box;
+				padding: 20px;
+				position: relative;
+				h2, h3 {
+					margin: 0;
+					transition: color 0.2s $ease-out-snel;
+					margin-bottom:.5em;
+				}
+				h2 {
+					line-height: 1.5em;
+					margin-top: calc(-1 * (0.75em - 10px));
+					font-size: 1.3em;
+					@media (max-width: 600px) {
+						font-size: 1.1em;
+						line-height: 1.1em;
+						margin-top: calc(-1 * (0.55em - 10px));
+					}
+				}
+				h3 {
+					line-height: 1em;
+					font-size: 1em;
+					margin-top: calc(-1 * (0.5em - 10px));
+					@media (max-width: 600px) {
+						font-size: 1.1em;
+						line-height: 1.1em;
+						margin-top: calc(-1 * (0.55em - 10px));
+					}
+				}
+				p, li {
+					margin-top: 0;
+					margin-bottom: 0.4em;
+					color: $donkergrijs;
+					font-size: .8em;
+					font-family: "Asap", sans-serif;
+					@media (max-width: 600px) {
+						display: none;
+					}
+				}
+				footer {
+					span, a {
+						font-size: 0.6em;
+						color: $grijs;
+						font-weight: 500;
+					}
+				}
+				ul, li {
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+				}
+			}
+			&:hover {
+				h2, h3 {
+					color: $rustig_rood;
+				}
+			}
+		}
+
+			.volgende-drie-artikelen {
+				@media (max-width: 600px) and (min-width: 500px) {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					article ~ article {
+						flex: 0 0 calc(50% - 10px);
+						&:last-child {
+							margin-left: 20px;
+						}
+					}
+				}
+			}
+
+			[data-contrast='1'] {
+				article.in-lijst .art-rechts p, article.in-lijst .art-rechts li {
+					color: $zwart;
+				}
+			}
+
+			.romp main article.in-lijst .art-links {
+				max-width: 100%;
+				@media (min-width: 600px) {
+					flex-basis: 230px;
+				}
+
+				flex-shrink: 0 ;
+				overflow:hidden;
+				@media (max-width: 600px) {
+					max-height: 225px;
+					a, img {
+						display: block;
+						width: 100%;
+					}
+				}
+			}
+
+			.romp main article.in-lijst .art-rechts footer {
+				position: absolute;
+				bottom: 0;
+				right: 100%;
+				background-color: rgba(255, 255, 255, 0.8);
+				padding: 5px;
+				text-align: right;
+				min-width: 80px;
+				span, a {
+					display: block;
+					color: $zwart;
+					font-weight: 500;
+				}
+				a:hover {
+					color: $rustig_rood;
+				}
+			}
+
+			.romp main .afb-met-titel {
+				& > .flex {
+					flex-wrap: wrap;
+					justify-content: space-between;
+					article {
+						display: block;
+						flex: 0 0 calc(33.3% - 10px);
+						.art-rechts footer {
+							display: none;
+						}
+						@media (max-width: 900px) {
+							flex: 0 0 calc(50% - 10px);
+						}
+						@media (max-width: 500px) {
+							flex: 0 0 100%;
+						}
+					}
+					h3 {
+						font-size: 1.2em;
+					}
+				}
+			}
+
+			[data-contrast='1'] .romp main .volgende-tien-artikelen div a {
+				color: $zwart;
+			}
+
+	.romp aside#zijbalk {
+		section:last-child:not(.niet-sticky) {
+			position: sticky;
+			top: 80px;
+		}
+		header h2, .widget-title{
+			margin: calc(-1 * (0.5em)) 0 20px 0;
+			@extend .streep-eronder;
+			font-size: 24px;
+
+		}
+		article {
+			margin-bottom: 0;
+			flex-direction: column;
+ 			&::after {
+ 				position: absolute;
+ 				content: '';
+ 				display: block;
+ 				width: calc(100% - 60px);
+ 				bottom: -1px;
+ 				left: 30px;
+ 				border: 1px solid rgba(0, 0, 0, 0.1)
+ 			}
+ 			&:last-child {
+	 			&::after {
+	 				display: none;
+	 			}
+ 			}
+		}
+			.art-rechts h3 {
+				font-size: 0.8em;
+				font-weight: 400;
+				font-family: "Asap";
+				margin: 0 auto;
+				line-height: 1.3;
+
+			}
+	}
+
+	.romp.zijbalk-laag aside#zijbalk {
+		margin-top: 410px;
+		@media (max-width: 900px) {
+			margin-top: 40px;
+		}
+	}
+
+
+	.artikel-meta {
+		background-color: $rustig_rood;
+		padding: 20px;
+		color: white;
+		display: inline-block;
+		vertical-align: top;
+		@media (max-width: 600px) {
+			//display: block;
+		}
+		& > span {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.auteur,
+		.datum {
+			font-size: 0.8em;
+			display:block;
+		}
+		.datum {
+			opacity: 0.8;
+			font-size: .5em;
+		}
+		 img {
+			width: 40px;
+			height: auto;
+			border-radius: 40px;
+			display: block;
+			margin: 0 5px 0 0 ;
+		}
+		 + .sharedaddy {
+		 	display: inline-block;
+		 	margin-left: 20px;
+			.sd-content ul {
+				margin-bottom: 0 !important;
+			}
+			@media (max-width: 600px) {
+				margin-left: 0;
+				display: block;
+			}
+		 }
+		 &.geen-auteur {
+		 	font-size: 1rem;
+		 	padding: 0;
+		 	opacity: .8;
+		 	margin-bottom: .8em;
+		 	display: block;
+		 }
+	}
+
+	.bericht {
+
+		@media (max-width: 900px) {
+			display: flex;
+			flex-direction: column;
+			.uitgelichte-afbeelding-buiten {
+				margin-left: -20px;
+				margin-right: -20px;
+				min-height: 33vh;
+				img {
+					display: block;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+			h1 {
+				order: 2;
+				margin-bottom: 0;
+			}
+			.niet-volle-breedte {
+				order: 3;
+			}
+			.intro {
+				margin-top: .4em;
+				margin-bottom: .8em;
+			}
+
+		}
+
+		footer {
+			margin-top: 40px;
+			section {
+				padding: 20px;
+				display: inline-block;
+				margin-bottom: 20px;
+				vertical-align: top;
+				margin-right: 17px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				h4 {
+					margin-bottom: .3em;
+				}
+			}
+		}
+	}
+
+		.niet-volle-breedte {
+			width: calc(100% - 40px);
+			@media (max-width: 900px) {
+				width:100%;
+			}
+		}
+
+		.conversie {
+			footer {
+				margin-top: 20px;
+				text-align: left;
+			}
+		}
+			#kalender-data {
+				display: none;
+				margin: 10px 0;
+				a {
+					display: block;
+				}
+			}
+
+
+.navigation {
+	text-align: center;
+	margin-bottom: -10px;
+	ul, li {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	li {
+		display: inline-block;
+		&:first-child a{
+			margin-left: 0;
+		}
+		&:last-child a{
+			margin-right: 0;
+		}
+		&.active a {
+			background-color: $rustig_rood;
+			color: white;
+		}
+		margin-bottom: 10px;
+	}
+	a {
+		@extend .knop;
+		margin: 0 5px;
+		.mdi {
+			position: relative;
+			top: 2px;
+		}
+	}
+}
+
+.intro {
+	font-size: 1.2em;
+	display: block;
+	margin: 1em 0;
+}
+
+
+.align-left {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.align-right {
+	margin-left: 10px;
+	margin-bottom: 10px;
+	float: right;
+}
+
+
+
+.onder-afb {
+	display: inline-flex;
+	margin: 0 0 20px;
+	vertical-align: top;
+	@media (max-width: 600px) {
+		display: flex;
+		margin-top: 10px;
+		margin-left: 0;
+	}
+}
+
+.wpcf7 input {
+	max-width: 100%;
+}
+
+.wpcf7 .wpcf7-form .half {
+	display: inline-block;
+	margin-right: 10px;
+	width: calc(50% - 13px);
+	max-width: 100%;
+	& + br {
+		display: none;
+		& + .half {
+			margin-right: 0;
+			margin-left: 10px;
+		}
+	}
+	input {
+		width: 100%;
+	}
+}
+
+	@media (max-width: 800px) {
+		.wpcf7 .wpcf7-form .half {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			width: auto;
+		}
+	}
+
+.wpcf7-response-output {
+	display: inline-block;
+	font-weight: bold;
+	color: white;
+	&.wpcf7-mail-sent-ok {
+		background-color: #13ec13;
+		padding: 10px;
+		margin-top: 20px;
+	}
+	&.wpcf7-validation-errors {
+		background-color: $rustig_rood;
+		padding: 10px;
+		margin-top: 20px;
+	}
+}
+
+
+.romp aside.onder-tekst-terzijde,
+.romp.zijbalk-laag aside.onder-tekst-terzijde {
+	width: auto;
+	margin: initial;
+	margin-left: initial;
+	margin-bottom: initial;
+	margin-top: 35px;
+}
+
+.taxonomie-navigatie {
+	padding: 15px;
+	background-color: rgba(255, 255, 255, 0.5);
+
+}
+	.taxonomie-navigatie-lijst {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		@media (max-width: 600px) {
+			flex-wrap:wrap;
+		}
+
+	}
+		.taxonomie-navigatie-lijst-stuk {
+
+			min-width: 220px;
+
+		}
+
+
+
+.voorpagina.romp .eerste-bericht.bericht h2{
+	margin-top: .66em;
+	margin-bottom: .75em;
+}
+
+@media (max-width: 600px) {
+	.voorpagina main {
+		display: flex;
+		flex-direction: column;
+		.krant-promo {
+			order: 4;
+			margin-top: 40px;
+			margin-bottom: 0;
+		}
+	}
+}

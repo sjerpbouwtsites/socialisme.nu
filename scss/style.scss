@@ -1,0 +1,58 @@
+/*!
+Theme Name: Socialisme.nu 2
+Theme URI: http://socialisme.nu
+Author: Sjerp van Wouden
+Author URI: http://sjerpbouwtsites.nl
+Description: Thema voor de IS.
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sjerpbouwtsites
+!*/
+
+
+@import 'basis/normalise';
+@import 'basis/typografie';
+@import 'basis/els';
+@import 'basis/formulieren';
+@import 'basis/menu';
+@import 'basis/inhoud';
+@import 'basis/mixins';
+
+@import 'variabelen';
+@import 'generiek';
+
+@import 'widgets/widgets';
+@import 'widgets/krant';
+@import 'widgets/agenda';
+@import 'widgets/nieuwsbrief';
+@import 'widgets/winkel';
+@import 'widgets/theorie-nav';
+@import 'widgets/pag-fam';
+@import 'widgets/formulier';
+@import 'widgets/ext_media';
+
+@import 'kalender';
+
+@import 'header';
+@import 'nav';
+@import 'berichten';
+@import 'footer';
+@import 'agenda';
+@import 'slick';
+@import 'zoeken';
+@import 'krant';
+@import 'vidverp';
+@import 'leaflet';
+
+
+
+*:focus {
+	outline: 2px solid lighten($rustig_rood, 20%) !important;
+}
+
+* {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-variant-ligatures: normla;
+}

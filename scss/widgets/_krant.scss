@@ -1,0 +1,114 @@
+.krant-promo {
+ 	padding: 20px;
+ 	max-width: 100%;
+	h2 {
+		color: $rustig_rood;
+		border-color: $rustig_rood;
+	}
+	a:hover {
+		text-decoration: none;
+	}
+	.art-verp {
+		margin: 0 20px;
+	}
+
+	h3, span {
+		color: $zwart;
+	}
+	.flex {
+		justify-content: space-between;
+	}
+	article + article + article ~ article {
+		display: none;
+	}
+	h3 {
+		font-size: 0.8em;
+		line-height: 1em;
+		margin-top: 0;
+		//color: $rustig_rood;
+		span {
+			margin-top: 0.4em;
+			display: block;
+		}
+	}
+	article {
+		width: calc(33% - 30px);
+		margin: 0 7.5px;
+		&:first-child {
+			margin-left: 0;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+		div {
+			width: calc(50% - 5px);
+		}
+	}
+	ul, li {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	li, p {
+		font-size: 0.75em;
+		font-family: "Asap", sans-serif;
+		margin-bottom: .2em;
+		color: $grijs;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	img {
+		transform:
+			perspective(600px)
+			rotateZ(4deg)
+			rotateX(11deg)
+			rotateY(2deg)
+			scale(.9, .9)
+			translateY(-10px);
+		box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+
+	}
+	.slick-arrow {
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		z-index: 10;
+		font-size: 40px;
+		color: $rustig_rood;
+		&:hover {
+			cursor: pointer;
+		}
+		&.mdi-chevron-left {
+			left: -35px;
+		}
+		&.mdi-chevron-right {
+			right: -35px;
+		}
+	}
+}
+main > 	.krant-promo.conversie footer {
+	text-align: right;
+	@media (max-width: 450px) {
+			margin-top: 0
+	}
+}
+
+@media (max-width: 380px) {
+	.krant-promo {
+		.flex {
+			padding-bottom: 80px;
+		}
+		.krant-promo-rechts {
+			position: relative;
+			p {
+				margin-left: -100%;
+				top: 100%;
+				position: absolute;
+				left: 0;
+				max-height: 120px;
+			}
+		}
+	}
+
+}

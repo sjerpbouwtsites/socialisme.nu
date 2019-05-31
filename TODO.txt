@@ -1,0 +1,35 @@
+# BUGS & TECHNISCH
+
+# FIJNSTELLEN
+
+opruimen! -> OOK DE JS THX
+
+zoveel mogelijk via klassen, niet via widget
+
+radio in formulier is nog niet heel mooi.
+
+legacy klassen verwijderen oid -> inc functions legacy
+
+M V C
+
+documenteren
+
+theorienav mobiel rommelig, vooruit achteruit pijltjes werken niet goed
+
+# NA LANCERING
+
+beveiliging. (zie oa mail die gestuurd is @ henk)
+
+permalinks
+
+agenda filter action function (a.js) is gebaseerd op slechte permalinks.
+
+SEO -> pagina's "wat is", kennisbank, actuele onderwerpen "wat is"-pagina toewijzen
+
+microdata preciezer doorvoeren.
+
+nogmaals goed naar animaties kijken
+
+urls van custom post types verbeteren.
+
+

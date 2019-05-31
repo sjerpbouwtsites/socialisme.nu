@@ -1,0 +1,11 @@
+#insert-jetpack-contact-form {
+	display: none;
+}
+
+[aria-label='Contactformulier toevoegen'] {
+	display: none !important;
+}
+
+[for="wpl_enable_post_likes"] {
+	display: none;
+}
