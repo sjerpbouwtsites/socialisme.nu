@@ -65,7 +65,7 @@ if (img.complete) {
 }
 
 */
-
+console.log('git test');
 
 
 var BASE_URL = "<?php echo get_site_url(); ?>",
