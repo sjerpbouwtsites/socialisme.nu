@@ -170,23 +170,23 @@ function check() {
   	}
 
     //kort titels
-    if (jQuery("[data-name='korte_titel'] input").length) {
+    // if (jQuery("[data-name='korte_titel'] input").length) {
 
-      var lengteTitel = jQuery("[data-name='korte_titel'] input").val().length;
+    //   var lengteTitel = jQuery("[data-name='korte_titel'] input").val().length;
 
-      waarden['geenKorteTitel'] = {
-        verg: 'min',
-        val: lengteTitel,
-        drempel: 1,
-        tekst: "Je hebt geen korte titel ingevuld. Geef nieuwe artikelen een korte titel."
-      };
-      waarden['teLangeKortTitel'] = {
-        verg: 'max',
-        val: lengteTitel,
-        drempel: 25,
-        tekst: "Korte titel %VERV% tekens kort? Past dat op één rij?"
-      };
-    }
+    //   waarden['geenKorteTitel'] = {
+    //     verg: 'min',
+    //     val: lengteTitel,
+    //     drempel: 1,
+    //     tekst: "Je hebt geen korte titel ingevuld. Geef nieuwe artikelen een korte titel."
+    //   };
+    //   waarden['teLangeKortTitel'] = {
+    //     verg: 'max',
+    //     val: lengteTitel,
+    //     drempel: 25,
+    //     tekst: "Korte titel %VERV% tekens kort? Past dat op één rij?"
+    //   };
+    // }
 
     //samenvatting
     //kort titels
