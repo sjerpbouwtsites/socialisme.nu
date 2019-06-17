@@ -1,288 +1,312 @@
 html {
-	//font-size: 16px;
+  //font-size: 16px;
 }
-	html[data-grootte='1'] body{
-		font-size: 1.25em;
-	}
-	html[data-grootte='2'] body{
-		font-size: 1.5em;
-	}
+html[data-grootte="1"] body {
+  font-size: 1.25em;
+}
+html[data-grootte="2"] body {
+  font-size: 1.5em;
+}
 
 body {
-	color: $zwart;
-	background-color: $heel_erg_palet;
-	font-family: 'Merriweather', serif;
-	margin-bottom: 40px;
+  color: $zwart;
+  background-color: $heel_erg_palet;
+  font-family: "Merriweather", serif;
+  margin-bottom: 40px;
 }
-	[data-contrast='1'] body{
-		background-color: white;
-		text-rendering: optimizeLegibility;
-	}
+[data-contrast="1"] body {
+  background-color: white;
+  text-rendering: optimizeLegibility;
+}
 
-[data-dyslexie='1'] *{
-	font-family: Dyslexie, sans-serif !important;
-	//font-size: 20px;
+[data-dyslexie="1"] * {
+  font-family: Dyslexie, sans-serif !important;
+  //font-size: 20px;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: $rustig_rood;
+  color: $rustig_rood;
 }
 
 a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .klaar {
-	&::after {
-		content: '';
-		display: block;
-		clear: both;
-	}
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 }
 
-section, article {
-	@extend .klaar;
+section,
+article {
+  @extend .klaar;
 }
 
 .flex {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .float {
-	&::after {
-		content: '';
-		display: block;
-		clear: both;
-	}
-	& > * {
-		float: left;
-	}
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  & > * {
+    float: left;
+  }
 }
 .rel {
-	position: relative;
+  position: relative;
 }
 
-.verpakking{
-	margin: 0 auto;
-	padding: 0 20px;
-	box-sizing: border-box;
-	width: $desktop-vb;
-	max-width: 100%;
+.verpakking {
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  width: $desktop-vb;
+  max-width: 100%;
 }
 
 .blok {
-	background-color: white;
-	box-shadow: 0 1px 2px $roodgrijze_tint;
-	color: $donkergrijs;
+  background-color: white;
+  box-shadow: 0 1px 2px $roodgrijze_tint;
+  color: $donkergrijs;
 }
-	[data-contrast='1'] .blok {
-		color: $zwart;
-		box-shadow: none;
-		//border: 1px solid grey;
-	}
+[data-contrast="1"] .blok {
+  color: $zwart;
+  box-shadow: none;
+  //border: 1px solid grey;
+}
 
-.knop-div ~ .knop-div{
-	margin-top: 10px;
+.knop-div ~ .knop-div {
+  margin-top: 10px;
 }
 
 .knoppen-doos {
-	margin-bottom: -10px;
-	.knop {
-		margin-bottom: 10px;
-		margin-right: 10px;
-	}
-	hr {
-		background-color: transparent;
-		position: relative;
-		&::after {
-			position: absolute;
-			left: 0;
-			top: 4px;
-			display: block;
-			content: '';
-			border-bottom: 1px solid $lichtgrijs;
-			width: 290px;
-			max-width: 80%;
-		}
-	}
+  margin-bottom: -10px;
+  .knop {
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+  hr {
+    background-color: transparent;
+    position: relative;
+    &::after {
+      position: absolute;
+      left: 0;
+      top: 4px;
+      display: block;
+      content: "";
+      border-bottom: 1px solid $lichtgrijs;
+      width: 290px;
+      max-width: 80%;
+    }
+  }
 }
 
 .knop {
-	display: inline-block;
-	padding: 0.3em 1em;
-	font-weight: bold;
-	background-color: #fcfcfc;
-	box-shadow: 2px 4px 0 $roodgrijze_tint;
-	transition: all 0.2s ease-out 0.2s;
-	position: relative;
-	top: 0;
-	color: $rustig_rood;
-	&:hover, &:visited, &:active {
-		color: $rustig_rood;
-		text-decoration: none;
-	}
-	&:hover {
-		transition: all 0.15s ease-out;
-		box-shadow: 0.5px 1px 0 $roodgrijze_tint;
-		top: 3px;
-	}
-	span {
-		margin-right: 8px;
-		color: $rustig_rood !important;
-		line-height: inherit  !important;
-	}
-	i {
-		color: $rustig_rood !important;
-	}
-	&.in-wit {
-		background-color: $rustig_rood;
-		box-shadow: 2px 4px 0 $roodgrijze_tint;
-		color: white !important;
-			&:hover {
-			box-shadow: 0.5px 1px 0 $roodgrijze_tint;
-			top: 3px;
-		}
-		span, i {
-			color: white !important;
-		}
-	}
-	&.ikoon-links {
-		display: inline-flex;
-		flex-direction: row;
-		margin-right: 10px;
-		span {
-			order: 2;
-			margin-right: 0;
-			margin-left: 10px;
-		}
-		i {
-			margin-left: -2px;
-		}
-	}
+  display: inline-block;
+  padding: 0.3em 1em;
+  font-weight: bold;
+  background-color: #fcfcfc;
+  box-shadow: 2px 4px 0 $roodgrijze_tint;
+  transition: all 0.2s ease-out 0.2s;
+  position: relative;
+  top: 0;
+  color: $rustig_rood;
+  letter-spacing: 0.033em;
+  &:hover,
+  &:visited,
+  &:active {
+    color: $rustig_rood;
+    text-decoration: none;
+  }
+  &:hover {
+    transition: all 0.15s ease-out;
+    box-shadow: 0.5px 1px 0 $roodgrijze_tint;
+    top: 3px;
+  }
+  span {
+    margin-right: 8px;
+    color: $rustig_rood !important;
+    line-height: inherit !important;
+  }
+  i {
+    color: $rustig_rood !important;
+  }
+  &.in-wit {
+    background-color: $rustig_rood;
+    box-shadow: 2px 4px 0 $roodgrijze_tint;
+    color: white !important;
+    &:hover {
+      box-shadow: 0.5px 1px 0 $roodgrijze_tint;
+      top: 3px;
+    }
+    span,
+    i {
+      color: white !important;
+    }
+  }
+  &.ikoon-links {
+    display: inline-flex;
+    flex-direction: row;
+    margin-right: 10px;
+    span {
+      order: 2;
+      margin-right: 0;
+      margin-left: 10px;
+    }
+    i {
+      margin-left: -2px;
+    }
+  }
+  &.uitgesproken {
+    font-size: 1.2em;
+    filter: contrast(110%);
+    text-shadow: 1px 1px 1px rgba(100, 100, 100, 0.3);
+    padding: 0.45em 1.5em;
+  }
+  &.zwakker {
+    opacity: 0.75;
+    filter: hue-rotate(15deg);
+  }
 }
 
 .buitengrens-rechts {
-	position: relative;
-	&::after {
-		position: absolute;
-		height: 100%;
-		content: '';
-		display: block;
-		right: -10px;
-		top: 0;
-		border-right: 1px solid #ddd;
-	}
+  position: relative;
+  &::after {
+    position: absolute;
+    height: 100%;
+    content: "";
+    display: block;
+    right: -10px;
+    top: 0;
+    border-right: 1px solid #ddd;
+  }
 }
 
-a, a:visited {
-	color: $rustig_rood;
-	text-decoration: none;
+a,
+a:visited {
+  color: $rustig_rood;
+  text-decoration: none;
 }
 
-h2, h3, h4, h5, h6 {
-	&:first-child {
-		margin-top: -0.3em;
-	}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &:first-child {
+    margin-top: -0.3em;
+  }
 }
 
 main > * {
-	margin-bottom: 40px;
-	&:last-child {
-		margin-bottom: 0;
-	}
+  margin-bottom: 40px;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 section footer {
-	text-align: right;
-	margin-top: 10px;
+  text-align: right;
+  margin-top: 10px;
 }
 
 .streep-eronder {
-	display: inline-block;
-	padding-right: 1.5em;
-	border-style: solid;
-	border-bottom-width: 2px;
-	border-left: 0;
-	border-right: 0;
-	border-top: 0;
+  display: inline-block;
+  padding-right: 1.5em;
+  border-style: solid;
+  border-bottom-width: 2px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
 }
 
-body [type='submit'] {
-	@extend .knop;
-	font-family: 'Merriweather', serif;
-	font-size: 1em;
-	border: 0;
-	border-radius: 0;
-	height: calc(2em + 2px);
+body [type="submit"] {
+  @extend .knop;
+  font-family: "Merriweather", serif;
+  font-size: 1em;
+  border: 0;
+  border-radius: 0;
+  height: calc(2em + 2px);
 }
 
-[data-contrast='1'] {
-	input[type="text"],
-	input[type="email"],
-	input[type="url"],
-	input[type="password"],
-	input[type="search"],
-	input[type="number"],
-	input[type="tel"],
-	input[type="range"],
-	input[type="date"],
-	input[type="month"],
-	input[type="week"],
-	input[type="time"],
-	input[type="datetime"],
-	input[type="datetime-local"],
-	input[type="color"],
-	textarea {
-		border: 1px solid $zwart;
-		color: $zwart;
-	}
+[data-contrast="1"] {
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="range"],
+  input[type="date"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="color"],
+  textarea {
+    border: 1px solid $zwart;
+    color: $zwart;
+  }
 }
 
 .meta-niet-tonen {
-	display: none;
+  display: none;
 }
 
-::-moz-selection { /* Code for Firefox */
-    color: white;
-    background: lighten($rustig_rood, 15%);
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: lighten($rustig_rood, 15%);
 }
 
 ::selection {
-    color: white;
-    background: lighten($rustig_rood, 15%);
+  color: white;
+  background: lighten($rustig_rood, 15%);
 }
 
 .wp-caption .wp-caption-text {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-.wp-caption, .alignright, .alignleft {
-	max-width: calc(100% - 1.5em);
+.wp-caption,
+.alignright,
+.alignleft {
+  max-width: calc(100% - 1.5em);
 }
 
 .skip-link:focus {
-	display: block !important;
-	height: auto !important;
-	clip-path: initial !important;
-	position: absolute;
-	top: 20px !important;
-	left: calc(100% + 10px) !important;
-    clip: initial !important;
-	word-wrap: initial !important;
-	width: 200px !important;
-	padding-left: 10px !important;
-	padding-right: 10px !important;
+  display: block !important;
+  height: auto !important;
+  clip-path: initial !important;
+  position: absolute;
+  top: 20px !important;
+  left: calc(100% + 10px) !important;
+  clip: initial !important;
+  word-wrap: initial !important;
+  width: 200px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
 }
 
 .wpcf7-not-valid {
-	outline: 2px solid $rustig_rood;
+  outline: 2px solid $rustig_rood;
 }
 
-.screen-reader-text, .screen-reader-response {
+.screen-reader-text,
+.screen-reader-response {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);

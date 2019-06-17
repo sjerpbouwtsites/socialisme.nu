@@ -7,13 +7,22 @@
     "watch": "npm run dev",
     "dev": "cross-env NODE_ENV=development node js/a.js",
     "build": "cross-env NODE_ENV=production node js/a.js"
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-preset-env": "^1.7.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-cache": "^1.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
     "node-sass": "^4.9.3",
     "parcel-bundler": "^1.10.1"
   }
