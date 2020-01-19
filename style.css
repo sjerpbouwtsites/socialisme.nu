@@ -283,9 +283,9 @@ blockquote {
     margin-top: 0; }
   blockquote::before {
     width: 30px;
-    background-image: url("/wp-content/themes/socnu/afb/format-quote-open.png");
+    background-image: url("/wp-content/themes/socialisme.nu/afb/format-quote-open.png");
     height: 30px;
-    content: '';
+    content: "";
     display: inline-block;
     vertical-align: top;
     background-size: cover;
